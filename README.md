@@ -28,12 +28,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report,confusion_matrix
 import matplotlib.pyplot as plt
-import seaborn as snsconf_matrix=confusion_matrix(Y_test,Y_pred)
-sns.heatmap(conf_matrix,annot=True,fmt="d",cmap="Blues")
-plt.xlabel=("Predicted")
-plt.ylabel=("Actual")
-plt.title("Confussion Matrix")
-plt.show()
+import seaborn as sns
 #load datasets
 data=pd.read_csv('tumor.csv')
 print(data.head())
@@ -52,6 +47,12 @@ print("Name: Suwasthika V")
 print("Register Number: 212225040445")
 print("Accuracy:",accuracy)
 print("Classification Report:\n",classification_report(Y_test,Y_pred))
+conf_matrix=confusion_matrix(Y_test,Y_pred)
+sns.heatmap(conf_matrix,annot=True,fmt="d",cmap="Blues")
+plt.xlabel=("Predicted")
+plt.ylabel=("Actual")
+plt.title("Confussion Matrix")
+plt.show()
 ```
 
 ## Output:
